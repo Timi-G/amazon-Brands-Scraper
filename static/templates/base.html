@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'styles.css' %}" rel="stylesheet">
+  <title>Amazon Product Listing</title>
+</head>
+<body>
+  <div class="navbar bg-base-100 p-4">
+    <div class="flex-1">
+      <a class="bg-auto bg-gray-200 rounded-full m-2 p-2" href="{% url 'products_search' %}">Amazon Brands</a>
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
