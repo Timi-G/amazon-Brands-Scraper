@@ -38,7 +38,7 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
       - Run the command `./Redis-x64-3.0.504/redis-server`.
   - Linux
     - Kindly follow the steps in the official [redis website](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-linux/)
-    - After successful installation, in case you are unable to start redis with `sudo` command, simply type `redis-server` in your terminal and press 'enter' to start the server.
+    - After successful installation, simply type `redis-server` in your terminal and press 'enter' to start the server.
     - If redis still doesn't start after the above steps, maybe try checking your Linux distribution or try using Docker.
 - To start the celery worker:
   - Open another terminal or Windows PowerShell with venv activated (see how to activate venv in the previous section).
@@ -57,11 +57,16 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
     - You can include 'start time'
     - All other arguments can be left empty
     - Save
+    - Check terminal celery worker was started to ensure celery task is received (a log message should show that scrape has started)
+    - If task hasn't started, select your saved periodic task and choose option "Run selected tasks" from "Actions" dropdown. Tap Go
+    - Scraping for created brands should have started. Confirm in terminal celery worker was started 
   - Alternatively, start celery beat in terminal:
     - Open another terminal or Windows PowerShell ensuring venv activated
     - From the amazonProductListing root directory, run `celery -A amazonProductListing beat -l info` in the terminal
 
-        *note that you can manually scrap products of a brand using django admin (see note at the end of this documentation)*
+  **Check code execution and frontend viewership section in this documentation for how to view the Django website**
+
+    *Note that you can manually scrap products of a brand using django admin (see note at the end of this documentation)*
 
 ## Web scraping implementation
 - Firstly, the scraper visits `amazon.com` and gets the URL of products of the specific brands defined in the admin panel, taking pagination into consideration.
@@ -72,7 +77,7 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
 
 ## Code execution and frontend viewership
 To run the Django website:
-- Run command `npm run dev` in a terminal with venv activated to utilize `DaisyUI`.
+- Run command `npm run dev` in a seperate terminal with venv activated to utilize `DaisyUI`.
 - Run `python manage.py runserver` in another terminal with venv activated to start the development server.
 - Navigate to the link of the localhost on your browser (again, note that your localhost will display in terminal);
   - A sample localhost link (which will direct to the homepage) looks like this: `http://127.0.0.1/8000`.
