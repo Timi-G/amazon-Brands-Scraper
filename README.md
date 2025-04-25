@@ -23,7 +23,7 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
 + Ensure Node.js is installed — the version used for this project is v17.3.1. If it is not installed, download the installer [here](https://nodejs.org/en/download).
 + Install TailwindCSS by running `npm install -D tailwindcss`.
 + Initialize TailwindCSS by running `npx tailwindcss init`.
-+ Install DasiyUI by running `npm i -D daisyui@latest`.
++ Install DasiyUI by running `npm i -D daisyui`.
 
 ## Scheduling and managing periodic tasks
 - Make sure to create a new superuser account with `python manage.py createsuperuser`.
