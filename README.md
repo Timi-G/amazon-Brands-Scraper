@@ -43,8 +43,10 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
     - If redis still doesn't start after the above steps, maybe try checking your Linux distribution or try using Docker.
 - To start the celery worker:
   - Open another terminal or Windows PowerShell with venv activated (see how to activate venv in the previous section).
-  - Ensure you are in the root directory `amazonProductListing` and start celery with the command `celery -A amazonProductListing worker -l info`.
-  - Note that you might run into errors using celery with the above command on Windows due to multiprocessing limits. If this is the case, run celery instead as solo with the command `celery -A amazonProductListing worker -l info -P solo`.
+  - Windows
+    - On Windows, due to multiprocessing limits, you have to run celery as solo with the command `celery -A amazonProductListing worker -l info -P solo` from the root directory `amazon-Brands-Scraper`
+  - Linux
+    - Ensure you are in the root directory `amazon-Brands-Scraper` and start celery with the command `celery -A amazonProductListing worker -l info`.
 - Now, you need to start celery beat which sends due tasks to the worker.
   - To start celery beats
     - Open Django Admin Panel (/admin).
@@ -61,9 +63,6 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
     - Check terminal celery worker was started to ensure celery task is received (a log message should show that scrape has started)
     - If task hasn't started, select your saved periodic task and choose option "Run selected tasks" from "Actions" dropdown. Tap Go
     - Scraping for created brands should have started. Confirm in terminal celery worker was started 
-  - Alternatively, start celery beat in terminal:
-    - Open another terminal or Windows PowerShell ensuring venv activated
-    - From the amazonProductListing root directory, run `celery -A amazonProductListing beat -l info` in the terminal
 
   **Check code execution and frontend viewership section in this documentation for how to view the Django website**
 
@@ -98,4 +97,4 @@ You can use the credentials below to create an easy-to-remember superuser.
 - Email: admin@mail.com
 - Password: admin
 
-**Note:  For manual scrape operations, use the actions dropdown feature at the top of the 'Admin Brands' page in the admin panel to scrape products of specific brands. Simply select brands you want to scrape for and choose action 'Scrape products for selected brands'**
+**Note:  For manual scrape operations, use the actions dropdown feature at the top of the 'Brands' page in the admin panel to scrape products of specific brands. Simply select brands you want to scrape for and choose action 'Scrape products for selected brands'**
