@@ -17,13 +17,14 @@ Ensure virtual environment (venv) is activated and install dependencies by the f
     - Install beat with `pip install django-celery-beat`.
     - Install sqlalchemy with `pip install sqlalchemy`.
     - Install broker with `pip install redis`.
-- After all installations, apply necessary migrations for the Django project with `python manage.py migrate`.
 
 To view the products of a brand through a minimalistic yet beautiful frontend, set up your system as follows:
 + Ensure Node.js is installed — the version used for this project is v17.3.1. If it is not installed, download the installer [here](https://nodejs.org/en/download).
 + Install TailwindCSS by running `npm install -D tailwindcss`.
 + Initialize TailwindCSS by running `npx tailwindcss init`.
 + Install DasiyUI by running `npm i -D daisyui`.
+
+    After all installations, apply necessary migrations for the Django project with `python manage.py migrate`.
 
 ## Scheduling and managing periodic tasks
 - Make sure to create a new superuser account with `python manage.py createsuperuser`.
@@ -78,7 +79,7 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
 ## Code execution and frontend viewership
 To run the Django website:
 - Run command `npm run dev` in a seperate terminal with venv activated to utilize `DaisyUI`.
-- Run `python manage.py runserver` in another terminal with venv activated to start the development server.
+- Run `python manage.py runserver` in another terminal with venv activated to start the development server if it isn't running in a previously opened terminal.
 - Navigate to the link of the localhost on your browser (again, note that your localhost will display in terminal);
   - A sample localhost link (which will direct to the homepage) looks like this: `http://127.0.0.1/8000`.
 - `{localhost}/products` will direct you to the products page.
