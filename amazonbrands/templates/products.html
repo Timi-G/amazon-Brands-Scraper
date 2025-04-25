@@ -3,11 +3,13 @@
 {% block content %}
   <div class="relative p-4">
     {#searchbar#}
-    <div class="static w-120">
-      <form method="GET" action="{% url 'products_search' %}">
-        <label class="input">
-          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
-          <input type="search" required placeholder="Search brand name ..." name="brand_name" value="{{ request.GET.brand_name|default_if_none:'' }}"/>
+    <div class="static flex">
+      <form class="w-fit h-4" method="GET" action="{% url 'products_search' %}">
+        <label class="flex input input-bordered items-center rounded-full gap-2 py-1 px-3">
+          <div class="flex items-center justify-center w-5 h-5">
+            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3" fill-rule="evenodd" fill-rule="evenodd"></path></g></svg>
+          </div>
+          <input class="outline-none text-sm bg-transparent" type="search" required placeholder="Search brand name ..." name="brand_name" value="{{ request.GET.brand_name|default_if_none:'' }}"/>
         </label>
       </form>
     </div>

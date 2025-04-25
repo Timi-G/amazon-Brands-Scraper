@@ -128,6 +128,7 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
