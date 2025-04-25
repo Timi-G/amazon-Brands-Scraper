@@ -1,4 +1,4 @@
-# Amazon Product Listing
+# Amazon Brands Scraper
 ## Setup and local execution
 
 Ensure virtual environment (venv) is activated and install dependencies by the following:
