@@ -24,7 +24,7 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
 + Initialize TailwindCSS by running `npx tailwindcss init`.
 + Install DasiyUI by running `npm i -D daisyui`.
 
-    After all installations, apply necessary migrations for the Django project with `python manage.py migrate`.
+      After all installations, apply necessary migrations for the Django project with `python manage.py migrate`.
 
 ## Scheduling and managing periodic tasks
 - Make sure to create a new superuser account with `python manage.py createsuperuser`.
