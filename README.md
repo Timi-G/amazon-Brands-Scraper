@@ -63,6 +63,9 @@ To view the products of a brand through a minimalistic yet beautiful frontend, s
     - Check terminal celery worker was started to ensure celery task is received (a log message should show that scrape has started)
     - If task hasn't started, select your saved periodic task and choose option "Run selected tasks" from "Actions" dropdown. Tap Go
     - Scraping for created brands should have started. Confirm in terminal celery worker was started 
+  - Alternatively, start celery beat in terminal:
+    - Open another terminal or Windows PowerShell ensuring venv activated
+    - From the amazonProductListing root directory, run `celery -A amazonProductListing beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler` in the terminal
 
   **Check code execution and frontend viewership section in this documentation for how to view the Django website**
 
